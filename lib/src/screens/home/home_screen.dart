@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:propotipo_escuela/src/screens/areas/area_screen.dart';
+import 'package:propotipo_escuela/src/screens/home/home_drawer.dart';
 
 class HomePage extends StatelessWidget {
   static const String route = '/home';
@@ -12,11 +14,14 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: DrawerApp(),
       appBar: AppBar(
-        title: Text('Profesores'),
+        title: Text('GENERAL'),
       ),
       body: GridView.count(
-        crossAxisCount: GetPlatform.isWeb ? 4 : 1,  
+        padding: EdgeInsets.all(15.0),
+        crossAxisCount:
+            Get.mediaQuery.orientation == Orientation.landscape ? 4 : 2,
         crossAxisSpacing: 4.0,
         mainAxisSpacing: 8.0,
         children: List.generate(
@@ -49,20 +54,48 @@ class RandomColorModel {
 }
 
 class Choice {
-  const Choice({required this.title, required this.icon});
+  const Choice({required this.title, required this.icon, required this.onTap});
   final String title;
   final IconData icon;
+  final void Function() onTap;
 }
 
 const List<Choice> choices = const <Choice>[
-  const Choice(title: 'Calidad Académica', icon: Icons.home),
-  const Choice(title: 'Imagen', icon: Icons.image),
-  const Choice(title: 'Clima organizacional', icon: Icons.perm_phone_msg),
-  const Choice(title: 'Servicio de Apoyo', icon: Icons.help_outline_sharp),
   const Choice(
-      title: 'Asuntos estudiantiles', icon: Icons.personal_injury_rounded),
-  const Choice(title: 'Internalización', icon: Icons.airplanemode_on_rounded),
-  const Choice(title: 'Finanzas', icon: Icons.monetization_on),
+    title: 'Bachillerato',
+    icon: Icons.home,
+    onTap: _hola,
+  ),
+  const Choice(
+    title: 'Primaria',
+    icon: Icons.image,
+    onTap: _hola2,
+  ),
+  const Choice(
+    title: 'Kinder',
+    icon: Icons.perm_phone_msg,
+    onTap: _hola3,
+  ),
+  const Choice(
+    title: 'Administrativo',
+    icon: Icons.help_outline_sharp,
+    onTap: _hola4,
+  ),
+  const Choice(
+    title: 'Psicopedagogía',
+    icon: Icons.personal_injury_rounded,
+    onTap: _hola5,
+  ),
+  const Choice(
+    title: 'Informática',
+    icon: Icons.airplanemode_on_rounded,
+    onTap: _hola6,
+  ),
+  const Choice(
+    title: 'Deportes',
+    icon: Icons.monetization_on,
+    onTap: _hola7,
+  ),
 ];
 
 class SelectCard extends StatelessWidget {
@@ -71,18 +104,56 @@ class SelectCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle? textStyle = Theme.of(context).textTheme.headline4;
-    return Card(
-        color: Colors.orange,
+    final TextStyle? textStyle = Theme.of(context).textTheme.headline5;
+    return InkWell(
+      onTap: choice.onTap,
+      borderRadius: BorderRadius.circular(10.0),
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        elevation: 10.0,
+        color: Colors.white,
         child: Center(
           child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Expanded(
-                    child:
-                        Icon(choice.icon, size: 50.0, color: textStyle!.color)),
-                Text(choice.title, style: textStyle),
-              ]),
-        ));
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Expanded(
+                child: Icon(choice.icon, size: 50.0, color: textStyle!.color),
+              ),
+              Text(choice.title, style: textStyle),
+            ],
+          ),
+        ),
+      ),
+    );
   }
+}
+
+void _hola() {
+  Get.toNamed(AreaScreen.route, arguments: 'Calidad Académica');
+}
+
+void _hola2() {
+  Get.toNamed(AreaScreen.route, arguments: 'Imagen');
+}
+
+void _hola3() {
+  Get.toNamed(AreaScreen.route, arguments: 'Colima organizacional');
+}
+
+void _hola4() {
+  Get.toNamed(AreaScreen.route, arguments: 'Servicio de Apoyo');
+}
+
+void _hola5() {
+  Get.toNamed(AreaScreen.route, arguments: 'Asuntos estudiantiles');
+}
+
+void _hola6() {
+  Get.toNamed(AreaScreen.route, arguments: 'Internalización');
+}
+
+void _hola7() {
+  Get.toNamed(AreaScreen.route, arguments: 'Finanzas');
 }

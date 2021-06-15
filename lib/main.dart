@@ -12,7 +12,7 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-  GetStorage box = GetStorage();
+  final GetStorage box = GetStorage();
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      initialRoute: box.read('login') == null || box.read('login') != false
+      initialRoute: box.read('login') == null || box.read('login') == false
           ? '/'
           : '/home',
       navigatorKey: Get.key,
