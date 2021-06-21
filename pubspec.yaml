@@ -33,6 +33,7 @@ dependencies:
   get:
   get_storage:
   getwidget: ^2.0.2
+  validators: ^3.0.0
 
 dev_dependencies:
   flutter_test:

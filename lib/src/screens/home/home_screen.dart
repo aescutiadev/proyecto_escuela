@@ -6,7 +6,6 @@ import 'package:propotipo_escuela/src/screens/areas/area_screen.dart';
 import 'package:propotipo_escuela/src/screens/home/home_drawer.dart';
 
 class HomePage extends StatelessWidget {
-  static const String route = '/home';
   HomePage({Key? key}) : super(key: key);
 
   final List items = ['Hola', 'MUNDO'];
@@ -131,29 +130,29 @@ class SelectCard extends StatelessWidget {
 }
 
 void _hola() {
-  Get.toNamed(AreaScreen.route, arguments: 'Calidad Académica');
+  Get.toNamed('/home/:area', arguments: 'Calidad Académica');
 }
 
 void _hola2() {
-  Get.toNamed(AreaScreen.route, arguments: 'Imagen');
+  Get.toNamed('/home/:area', arguments: 'Imagen');
 }
 
 void _hola3() {
-  Get.toNamed(AreaScreen.route, arguments: 'Colima organizacional');
+  Get.toNamed('/home/:area', arguments: 'Colima organizacional');
 }
 
 void _hola4() {
-  Get.toNamed(AreaScreen.route, arguments: 'Servicio de Apoyo');
+  Get.toNamed('/home/:area', arguments: 'Servicio de Apoyo');
 }
 
 void _hola5() {
-  Get.toNamed(AreaScreen.route, arguments: 'Asuntos estudiantiles');
+  Get.toNamed('/home/:area', arguments: 'Asuntos estudiantiles');
 }
 
 void _hola6() {
-  Get.toNamed(AreaScreen.route, arguments: 'Internalización');
+  Get.toNamed('/home/:area', arguments: 'Internalización');
 }
 
 void _hola7() {
-  Get.toNamed(AreaScreen.route, arguments: 'Finanzas');
+  Get.toNamed('/home/:area', arguments: 'Finanzas');
 }

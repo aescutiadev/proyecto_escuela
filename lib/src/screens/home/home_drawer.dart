@@ -49,7 +49,7 @@ class DrawerApp extends StatelessWidget {
                 TextButton(
                   onPressed: () {
                     GetStorage().write('login', false);
-                    Get.offAllNamed(LoginPage.route);
+                    Get.offAllNamed('/');
                   },
                   child: Text('CERRAR SESIÓN'),
                 ),

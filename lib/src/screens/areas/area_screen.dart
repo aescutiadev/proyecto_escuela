@@ -3,30 +3,29 @@ import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
 
 class AreaScreen extends StatelessWidget {
-  static const String route = '/home/area';
   const AreaScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var i = Get.arguments;
+    var args = Get.arguments['area'];
     return Scaffold(
       appBar: AppBar(
-        title: Text(i.toString()),
+        title: Text(args.toString()),
       ),
       body: Container(
         color: Colors.grey.shade300,
         child: ListView(
           padding: EdgeInsets.all(20.0),
           children: [
-            _view(i),
+            _view(args),
           ],
         ),
       ),
     );
   }
 
-  Widget _view(String i) {
-    switch (i) {
+  Widget _view(String args) {
+    switch (args) {
       case 'Calidad Académica':
         return _viewCalidadAcademica();
       case 'Imagen':
