@@ -130,29 +130,36 @@ class SelectCard extends StatelessWidget {
 }
 
 void _hola() {
-  Get.toNamed('/home/:area', arguments: 'Calidad Académica');
+  var parameters = <String, String> {'type': 'Calidad Académica'};
+  Get.toNamed('/home/1', parameters: parameters);
 }
 
 void _hola2() {
-  Get.toNamed('/home/:area', arguments: 'Imagen');
+  var parameters = <String, String> {'type': 'Imagen'};
+  Get.toNamed('/home/2', parameters: parameters);
 }
 
 void _hola3() {
-  Get.toNamed('/home/:area', arguments: 'Colima organizacional');
+  var parameters = <String, String>{'type': 'Colima organizacional'};
+  Get.toNamed('/home/3', parameters: parameters);
 }
 
 void _hola4() {
-  Get.toNamed('/home/:area', arguments: 'Servicio de Apoyo');
+  var parameters = <String, String> {'type': 'Servicio de Apoyo'};
+  Get.toNamed('/home/4', parameters: parameters);
 }
 
 void _hola5() {
-  Get.toNamed('/home/:area', arguments: 'Asuntos estudiantiles');
+  var parameters = <String, String> {'type': 'Asuntos estudiantiles'};
+  Get.toNamed('/home/5', parameters: parameters);
 }
 
 void _hola6() {
-  Get.toNamed('/home/:area', arguments: 'Internalización');
+  var parameters = {'type': 'Internalización'};
+  Get.toNamed('/home/6', parameters: parameters);
 }
 
 void _hola7() {
-  Get.toNamed('/home/:area', arguments: 'Finanzas');
+  var parameters = {'type': 'Finanzas'};
+  Get.toNamed('/home/7', parameters: parameters);
 }

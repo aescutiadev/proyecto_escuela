@@ -7,7 +7,7 @@ class AreaScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var args = Get.arguments['area'];
+    var args = Get.parameters["type"];
     return Scaffold(
       appBar: AppBar(
         title: Text(args.toString()),
@@ -17,7 +17,7 @@ class AreaScreen extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.all(20.0),
           children: [
-            _view(args),
+            _view('Calidad Académica'),
           ],
         ),
       ),
